@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Shadows+Into+Light+Two&display=swap');
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.input {
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid rgb(250, 120, 13);
+    border-radius: 7px;
+    color: #FFF7E9;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.buttonS {
+        background-color: transparent;
+        color: #FFF7E9;
+        border: 1px solid rgb(250, 120, 13);
+        /* box-shadow: 2px 2px 2px 1px rgb(255, 115, 29, 0.6) ; */
+        border-radius: 7px;
+        padding: 0em 0.5em;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        /* position: absolute; */
+        /* top: 50%; */
+        /* left: 20%; */
+    }
+    
+.buttonS:hover {
+    background-color: rgb(250, 120, 13);
+    color: #FFF7E9;
+}

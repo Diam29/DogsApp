@@ -1,6 +1,8 @@
 const { infoBdApi } = require('../controllers/controller')
 const { Dogs, Temperaments } = require('../db.js')
 
+
+// Busqueda de perros por nombre (query)
 const dataAllDogs = async (req, res) => {
     const { name } = req.query;
     try {
@@ -22,8 +24,7 @@ const dataAllDogs = async (req, res) => {
 };
 
 
-// buscar perros por id devolverPerroId
-
+// buscar perros por id (devolverPerroId)
 
 const dataDogsId = async (req, res) => {
     const { id } = req.params;
@@ -36,27 +37,25 @@ const dataDogsId = async (req, res) => {
     }
 }
 
+// Crear nuevo perro
 const createDog = async (req, res) => {
     const { name, height, weight, life_span, temperament, image } = req.body;
-    if (!name || !height || !weight || !life_span || !temperament || !image) {
-        res.status(500).send('Faltan datos')
-    }
     try {
 
-        const dogCreated = await Dogs.create({
-            name, height, weight, life_span, image
-        });
+        const dogCreated = await Dogs.create({ name, height, weight, life_span, image });
 
-        const temperamentBd = await Temperaments.findOne({
-            where: { name: temperament },
-        });
-        await dogCreated.addTemperaments(temperamentBd); // se agrega el await para esperar que se encuentren los temperaments
-        res.status(200).send("El perro fue creado con exito");
-    }
-    catch (error) {
-        res.status(400).json({ error: error.message })
+        const tempeBd = await Temperaments.findOne({ where: { name: temperament } });
+
+        await dogCreated.addTemperaments(tempeBd);
+
+        res.status(200).json({ message: "El perro fue creado con exito" });
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({ error: "Error al crear el perro en la base de datos" });
     }
 };
+
+
 
 
 module.exports = { createDog, dataDogsId, dataAllDogs }

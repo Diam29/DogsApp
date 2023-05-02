@@ -3,7 +3,7 @@ const { Dogs, Temperaments } = require('../db.js');
 const URL = `https://api.thedogapi.com/v1/breeds`;
 
 
-// traer info de la api devolverPerros
+// Traer info de la Api (devolverPerros)
 
 const getDogsApi = async () => {
     let apiPets = (await axios.get(URL)).data
@@ -27,7 +27,7 @@ const getDogsApi = async () => {
 }
 
 
-// Traer info de la BDD perrosDb
+// Traer info de la BDD (perrosDb)
 
 const getInfoBdd = async () => {
     const dbPets = await Dogs.findAll({
@@ -51,7 +51,7 @@ const getInfoBdd = async () => {
 
 
 
-// Concatenar las info de Api y Bdd dbAndApi
+// Concatenar las info de Api y Bdd (dbAndApi)
 
 const infoBdApi = async (id) => {
     const infoApi = await getDogsApi()
@@ -60,15 +60,17 @@ const infoBdApi = async (id) => {
     if (id) return await filterDogsId(allInfo, id)
     return allInfo
 }
-// filtrar perros por id
+
+// Filtrar perros por id
 
 const filterDogsId = async (allInfo, id) => {
     const idString = id.toString()
     const dogsFiltered = await allInfo.filter(dogId => dogId.id.toString() === idString)
     return dogsFiltered.length ? dogsFiltered : 'No se encontraron perros con ese id'
 }
-// trae info de Temperaments
 
+
+// Trae info de Temperaments
 
 const infoTempBd = async () => {
     const infoTemp = await filterPetsDb.map((dog) => {
@@ -87,10 +89,11 @@ const infoTempBd = async () => {
     return infoTemp
 };
 
+// Traer todos los temperamentos 
 
 const getAllTemperaments = async () => {
-    let dataTemps = await axios.get(URL);
-    let apiTemps = dataTemps.data.map(dog =>
+    let dataTemps = (await axios.get(URL)).data;
+    let apiTemps = dataTemps.map(dog =>
         dog.temperament?.split(",")
     );
     const arrTemps = [].concat(...apiTemps);

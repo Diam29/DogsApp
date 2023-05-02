@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Shadows+Into+Light+Two&display=swap');
+
+
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    margin-left: 10%;
+    flex-direction: column;
+}
+
+h1 {
+    color: rgb(250, 120, 13);
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 70%;
+    font-size: 2.5em;
+    font-style: italic;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em; 
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin: 10px 20px 0 0;
+    background-color: transparent;
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+}
+
+.input:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+
+
+.tempContainer {
+    margin-left: 10%;
+}
+
+select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 1%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    color: rgb(239, 162, 99);
+    padding: 0.5rem 3.5rem;
+    background-color: transparent;
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+}
+
+select:hover {
+    background-color: rgb(250, 120, 13);
+    color: #100e0e;
+}
+
+ul {
+    margin-left: 12%;
+    margin-top: 2%;
+}
+
+li {
+    color: rgb(250, 120, 13);
+    font-family: 'Motserrat', sans-serif;
+    font-size: 1.2em;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: rgb(250, 120, 13);
+    margin-top: 10px;
+}
+
+.error {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    color: rgb(118, 237, 138);
+}
+
+  .formContainer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+
+  
+
+.buton{
+        margin-left: 20em;
+        font-family: 'Montserrat', sans-serif;
+        transform: translateX(-50%);
+        padding: 0.5rem 1rem;
+        font-size: 1.4rem;
+        background-color: transparent;
+        color: rgb(250, 120, 13);
+        border: 1.9px solid rgb(250, 120, 13);
+        border-radius: 0.5rem;
+        cursor:wait;
+        transition: all 0.3s ease;
+    }
+    
+    .buton:hover {
+        background-color: rgb(250, 120, 13);
+        color: #100e0e;
+    }
+
+    .buton2{
+        margin-left: 42%;
+        font-family: 'Montserrat', sans-serif;
+        transform: translateX(-50%);
+        padding: 0.5rem 1rem;
+        font-size: 1.4rem;
+        background-color: transparent;
+        color: rgb(250, 120, 13);
+        border: 1.9px solid rgb(250, 120, 13);
+        border-radius: 0.5rem;
+        cursor:wait;
+        transition: all 0.3s ease;
+    }
+    
+    .buton2:hover {
+        background-color: rgb(250, 120, 13);
+        color: #100e0e;
+    }

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Shadows+Into+Light+Two&display=swap');
+
+
+.cardsContainer {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20px;
+  }
+  
+  .cardsContainer > * {
+    flex-basis: 300px;
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .cards-container > * {
+      flex-basis: calc(50% - 10px);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .cards-container > * {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+  }

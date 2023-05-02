@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Shadows+Into+Light+Two&display=swap');
+
+
+/* .cardsContainer {
+    direction: ltr;
+    display: flex;
+    justify-content: flex-start;
+} */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: rgb(250, 120, 13);
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+    cursor:wait;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.pagination button:hover {
+    background-color: rgb(250, 120, 13);
+    color: #100e0e;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.selectsContainer {
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    /* gap: rem; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em; 
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.7em;
+    margin-left: 10em;
+    background-color: transparent;
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+}
+
+
+.select {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em; 
+    color: rgb(248, 243, 217);
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+}
+
+.select:hover {
+    background-color: rgb(250, 120, 13);
+    color: #100e0e;
+}
+
+
+
+.buttons {
+    margin: 1rem 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: rgb(250, 120, 13);
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+    cursor:wait;
+    transition: all 0.3s ease;
+}
+
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    transform: translateX(-50%);
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: rgb(250, 120, 13);
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+    cursor:wait;
+    transition: all 0.3s ease;
+}
+    
+.buttons:hover {
+    background-color: rgb(250, 120, 13);
+    color: #100e0e;
+}
+

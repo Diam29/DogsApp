@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Shadows+Into+Light+Two&display=swap');
+
+
+/* .detailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+} */
+
+.link button {
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 60rem;
+    margin-bottom: 2rem;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    background-color: transparent;
+    color: rgb(250, 120, 13);
+    border: 1.9px solid rgb(250, 120, 13);
+    border-radius: 0.5rem;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+    
+button:hover {
+    background-color: rgb(250, 120, 13);
+    color: #100e0e;
+}
+
+
+
+
+/* .atributos, .imagen{
+    width: 40%;
+} */
+
+.name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: rgb(250, 120, 13);
+    /* margin-left: 2rem;
+    margin-top: 3rem; */
+    align-self: flex-start;
+    margin-left: 1rem;
+}
+
+.atributos  {
+    background-color: transparent;
+    color: rgb(118, 237, 138);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    /* margin-top: 0.1em; */
+    /* padding: 0em 1em; */
+    /* align-self: flex-start; */
+    margin-left: 2rem;
+    margin-top: 4rem;
+
+}
+
+.imagen {
+    border-radius: 2em;
+    border: 0.2em solid rgb(250, 120,13);
+    max-width: 80%;
+    height: auto;
+    align-self: flex-start;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
