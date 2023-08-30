@@ -1,20 +1,24 @@
 const { Router } = require('express');
 // const { getDogHandler, getDogHandlerId, createDogHandler, devolverPerro, devolverPerroId, generoNewPerro, } = require('../handlers/dogHandler.js');
-const { dataAllDogs, dataDogsId, createDog } = require('../handlers/dogHandler')
+const { allDogsApi, allDogsDb, allDogsDBApi, getDogsById, createDog, getDogsByName, getDogsByTemperament } = require('../handlers/dogHandler.js')
 
 const dogsRoute = Router();
 
 
-dogsRoute.get('/', dataAllDogs)
+dogsRoute.get('/api', allDogsApi)
 
-dogsRoute.get('/:id', dataDogsId)
+dogsRoute.get('/db', allDogsDb)
 
-dogsRoute.post('/', createDog)
+dogsRoute.get('/', allDogsDBApi)
+
+dogsRoute.get('/name', getDogsByName)
+
+dogsRoute.get('/:id', getDogsById)
+
+dogsRoute.get('/temp/name', getDogsByTemperament)
+
+dogsRoute.post('/create', createDog)
 
 
 
 module.exports = dogsRoute;
-
-
-
-

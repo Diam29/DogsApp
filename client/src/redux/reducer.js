@@ -1,4 +1,4 @@
-import { GET_DETAILS, GET_DOGS, GET_DOGS_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, FILTER_TEMPERAMENTS, GET_TEMPERAMENTS, FILTER_CREATED } from './actions'
+import { POST_DOGS, GET_DETAILS, GET_DOGS, GET_DOGS_NAME, ORDER_BY_NAME, ORDER_BY_WEIGHT, FILTER_TEMPERAMENTS_BY_NAME, GET_TEMPERAMENTS, FILTER_CREATED, FILTER_CREATED_FALSE, FILTER_CREATED_TRUE } from './actions'
 
 
 
@@ -7,7 +7,9 @@ const initialState = {
     allDogs: [], // ya lo use
     dogName: [], // ya lo use
     dogTemp: [], // ya lo use
+    dogTempName: [],
     detail: [], // ya lo use
+    createdDogs: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -50,28 +52,35 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 dogTemp: action.payload
             }
-        case FILTER_TEMPERAMENTS:
-            const allDogs = state.allDogs
-            const filterTemp = action.payload === 'all'
-                ? allDogs
-                : allDogs.filter((dog) =>
-                    dog.temperament && dog.temperament.split(',').find(ele => ele === action.payload))
+        case FILTER_TEMPERAMENTS_BY_NAME:
+            const filteredDogs = action.payload
             return {
                 ...state,
-                allDogs: filterTemp
+                allDogs: filteredDogs
             }
-        case FILTER_CREATED:
-            const allDogsCreated = state.allDogs
-            const filterDogCreated = action.payload === 'api'
-                ? allDogsCreated.filter(dog => dog.created === false)
-                : allDogsCreated.filter(dog => dog.created === true)
-            console.log(filterDogCreated);
+        case POST_DOGS:
+            const postDogs = action.payload
             return {
                 ...state,
-                allDogs: filterDogCreated
+                createdDogs: postDogs
             }
+        // case FILTER_CREATED:
+        //     const allDogsCreated = state.allDogs
+        //     const filterDogCreated = action.payload === 'api'
+        //         ? allDogsCreated.filter(dog => dog.created === false)
+        //         : allDogsCreated.filter(dog => dog.created === true)
+        //     console.log(filterDogCreated);
+        //     return {
+        //         ...state,
+        //         allDogs: filterDogCreated
+        //     }
+        case FILTER_CREATED_FALSE:
+            return { ...state, createdDogs: action.payload, filter: 'api' };
+        case FILTER_CREATED_TRUE:
+            return { ...state, createdDogs: action.payload, filter: 'db' };
         default:
             return { ...state }
     }
+
 }
 export default reducer;

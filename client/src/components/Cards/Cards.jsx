@@ -10,6 +10,11 @@ const Cards = ({allDogs}) => {
             <Card dogs = {dogs} key={dogs.id}/>)  
         }
         </div>
+        // <div className='row row-cols-8 row-cols-md-8 g-4col-8'>
+        // {allDogsList?.map(dogs=>
+        //     <Card dogs = {dogs} key={dogs.id}/>)  
+        // }
+        // </div>
     )
 }
 
