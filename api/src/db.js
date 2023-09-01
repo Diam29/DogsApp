@@ -10,6 +10,9 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
+console.log(`DB_USER: ${DB_USER}`);
+console.log(`DB_PASSWORD: ${DB_PASSWORD}`);
+console.log(`DB_HOST: ${DB_HOST}`);
 
 
 const basename = path.basename(__filename);
