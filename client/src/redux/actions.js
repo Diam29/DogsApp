@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:3001/'
+// const url = 'http://localhost:3001/'
 
 // Mostrar todos los perros
 
@@ -10,8 +10,8 @@ export const GET_DOGS = 'GET_DOGS'
 export const getDogs = () => {
     return async (dispatch) => {
         try {
-            const allDogs = (await axios.get(`${url}dogs`)).data;
-            // console.log('soy action todos dog', allDogs);
+            const allDogs = (await axios.get(`/dogs`)).data;
+            console.log('soy action todos dog', allDogs);
 
             return dispatch({
                 type: GET_DOGS,
@@ -34,7 +34,7 @@ export const GET_DOGS_NAME = 'GET_DOGS_NAME'
 export const getDogsName = (name) => {
     return async (dispatch) => {
         try {
-            const dogName = (await axios.get(`${url}dogs/name?name=${name}`)).data;
+            const dogName = (await axios.get(`/dogs/name?name=${name}`)).data;
             // console.log('soy action name dog', dogName);
             return dispatch({
                 type: GET_DOGS_NAME,
@@ -53,7 +53,7 @@ export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS'
 export const getDogsTemp = () => {
     return async (dispatch) => {
         try {
-            const allTemp = (await axios.get(`${url}temperaments`)).data;
+            const allTemp = (await axios.get(`/temperaments`)).data;
             const filteredTemperaments = allTemp.filter((temp) => {
                 return temp.name.toLowerCase().includes(name.toLowerCase());
             });
@@ -75,7 +75,7 @@ export const FILTER_TEMPERAMENTS_BY_NAME = 'FILTER_TEMPERAMENTS_BY_NAME'
 export const filterByTemperamentsName = (name) => {
     return async (dispatch) => {
         try {
-            const dogTempName = (await (axios.get(`${url}dogs/temp/name?name=${name}`))).data
+            const dogTempName = (await (axios.get(`/dogs/temp/name?name=${name}`))).data
             // console.log('dogtempName action', dogTempName);
 
             return dispatch({
@@ -139,7 +139,7 @@ export const FILTER_CREATED_FALSE = 'FILTER_CREATED_FALSE'
 export const filterByCreatedFalse = () => {
     return async (dispatch) => {
         try {
-            const createdDogs = (await axios.get(`${url}dogs/api`)).data;
+            const createdDogs = (await axios.get(`/dogs/api`)).data;
             return dispatch({
                 type: FILTER_CREATED_FALSE,
                 payload: createdDogs
@@ -155,7 +155,7 @@ export const FILTER_CREATED_TRUE = 'FILTER_CREATED_TRUE'
 export const filterByCreatedTrue = () => {
     return async (dispatch) => {
         try {
-            const createdDogs = (await axios.get(`${url}dogs/db`)).data;
+            const createdDogs = (await axios.get(`/dogs/db`)).data;
             return dispatch({
                 type: FILTER_CREATED_TRUE,
                 payload: createdDogs
@@ -204,7 +204,7 @@ export const GET_DETAILS = 'GET_DETAILS'
 export function getDetail(id) {
     return async function (dispatch) {
         try {
-            const detail = await axios.get(`${url}dogs/${id}`);
+            const detail = await axios.get(`/dogs/${id}`);
             // const detail = dogsDetail.data;
             console.log(detail.data);
             return dispatch({ type: GET_DETAILS, payload: detail.data })
@@ -220,7 +220,7 @@ export const POST_DOGS = 'POST_DOGS'
 export function postDog(payload) {
     return async function (dispatch) {
         try {
-            const response = await axios.post(`${url}dogs/create`, payload);
+            const response = await axios.post(`/dogs/create`, payload);
 
             return dispatch({ type: POST_DOGS, payload: response.data });
         } catch (error) {

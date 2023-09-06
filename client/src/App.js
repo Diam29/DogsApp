@@ -6,7 +6,8 @@ import NavBar from './components/NavBar/NavBar'
 import { useLocation } from "react-router-dom";
 import Form from './components/Form/Form.jsx'
 import axios from 'axios'
-axios.defaults.baseURL = 'https://dogsappback.onrender.com'
+// axios.defaults.baseURL = 'https://dogsappback.onrender.com'
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
     <div className="App">
       {location.pathname === '/home' && <NavBar />}
       <Routes>
-        <Route exact path='/' element={<Landing />} />
-        <Route exact path='/home' element={<Home />} />
-        <Route exact path='/detail/:id' element={<Detail />} />
-        <Route exact path='/create' element={<Form />}></Route>
+        <Route exact path={'/'} element={<Landing />} />
+        <Route exact path={'/home'} element={<Home />} />
+        <Route exact path={'/detail/:id'} element={<Detail />} />
+        <Route exact path={'/create'} element={<Form />}></Route>
       </Routes>
     </div>
   );
