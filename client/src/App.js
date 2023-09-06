@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar'
 import { useLocation } from "react-router-dom";
 import Form from './components/Form/Form.jsx'
 import axios from 'axios'
-axios.defaults.baseURL = 'https://dogsbackapp.onrender.com'
+axios.defaults.baseURL = 'https://dogsappback.onrender.com'
 
 
 function App() {
