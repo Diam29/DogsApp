@@ -1,0 +1,7 @@
+{
+    "source": "/(.*)",
+    "headers": {
+        "Access-Control-Allow-Origin": "$VERCEL_URL"
+    },
+    "destination": "/$1"
+}
